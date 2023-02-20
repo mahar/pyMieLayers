@@ -1,4 +1,6 @@
+import numpy as np
 
+from .material import *
 
 class Layer(object):
 	'''

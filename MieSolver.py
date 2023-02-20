@@ -28,7 +28,7 @@ from scipy import constants
 import types
 
 from .Layer import * 
-#from material import *
+from .material import *
 
 
 __version__ = '2.0.0'
