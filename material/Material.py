@@ -1,3 +1,5 @@
+import numpy as np
+from scipy import constants 
 
 class Material(object): 
 	"""
@@ -10,9 +12,12 @@ class Material(object):
 
 	def __init__(self,eps,mu,freqs,units="RADPERSEC"):
 		'''
-		@param eps: 
-		@param mu
-		@param ndarray freqs
+
+		PARAMETERS
+		----------
+		`float` eps: 
+		`float` mu
+		`numpy.ndarray` freqs
 		'''
 		self.epsilon = eps*np.ones_like(freqs) + 0j
 		self.mu = mu*np.ones_like(freqs) +0j
@@ -40,9 +45,13 @@ class Material(object):
 			return m1.epsilon + m2.epsilon 
 		else:
 			raise TypeError("")
+
+	def __repr__(self):
+		return "Material object"
 	
 
 class DispersiveMaterial(Material):
+	"""DispersiveMaterial class"""
 	def __init__(self,eps,mu,freqs,units="RADPERSEC"):
 		'''
 		@param eps: 
